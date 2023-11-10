@@ -64,7 +64,73 @@ Short-term synaptic plasticity parameters (STSP) and connection probabilities (f
 Standard deviations of synaptic weights (first element in the third dimension of S_sig) and standard deviations of synaptic delays (second element in the third dimension of S_sig) also contain magic numbers.
 Noise parameters for each synapse type and stripe parameters are set.
 
+# IDNetSimRMD.m
+This is a MATLAB wrapper for C program IDNet.c to simulate abritrary biological neural networks.
+This file is where we set neuron parameters and initial conditions (one individual set for each neuron).
 
+Inputs:
+- SimPar: A set of parameters (neurons, synapses, control parameters)
+- ConMtx (optionally): A network structure (random connectivity specified in SimPar is used if this is empty).
+  
+Outputs:
+- STMtx: Cell array of spike times t_sp. Each cell contains t_sp of one neuron
+- SPMtx: Spike parameters matrix.
+- T:     Vector of simulation time steps for visualizing voltage traces
+- V:     Cell array of voltage traces for each neuron in the viewlist
+- Ninp:  Number of simulated neurons
+
+Magic numbers appear in the section titled "Redistribute neuron types."
+Intra-cell type and inter-cell type connections are set in this file, using parameters set in the SetCon_CommonNeighbour_Cross.m and SetCon_CommonNeighbour_Recur.m files.
+Also defined in this file: inter-stripe connections, connections to input neurons, and cell assemblies (no magic numbers).
+
+The actual simulation is run at the end of the code, as copied below:
+[Ninp,~]=IDNet(CtrPar,NeuPar,NPList,STypPar,SynPar,SPMtx,SimPar.EvtMtx,SimPar.EvtTimes,ViewList,InpSTtrains,NoiseDistr,V0,UniqueNum,NeuronGroupsSaveArray);
+
+The synaptic parameter matrix SynPar is set using the following function:
+function [SynPar,Nsyn,idc]=SetSyn(SynPar,Nsyn,idc,ST,ConPar,ConParSTSP,S_sig,S_max,S_min)
+
+Inputs:
+- SynPar:         Synapse parameters (excluding those computed here)
+- Nsyn:           Number of synapses that are already set
+- idc:            Indices of synapses that are already set
+- ST:             Synapse type – depends on what the presynaptic cell type is, either 1 and 3 for AMPA and NMDA or 2 for GABA
+- ConPar:         Mean connection parameters (synaptic weight, delay and failure probability)
+- ConParSTSP:     Short-term synaptic plasticity parameters
+- S_sig:          Standard deviation of connection parameters
+- S_max:          Maximum of connection parameters
+- S_min:          Minimum of connection parameters
+ 
+Outputs:
+- SynPar:         Synapse parameters (concatinating old and new columns)
+- Nsyn:           Updated number of synapses
+- idc:            Updated synapse indices
+
+# setCRISPRparams.m
+This file sets the ratio of pyramidal cells in the wild type and NMDA receptor knockout conditions, as well as the parameters for each synpase type.
+It allows us to create a 3D matrix called ALL_par where the first element is N_post, the second element is N_pre, and the third element is 3 (a magic number based on the number of receptor types).
+Contains magic numbers. 
+
+Sample code below for conenctions from wild type L23-E to wild type L23-E cells: 
+
+    AGN_struct(1, 1).AMPA_wgt = 0.8405;
+    AGN_struct(1, 1).NMDA_wgt = 0.8405;
+    AGN_struct(1, 1).GABA_wgt = nan;
+    AGN_struct(1, 1).dtax = 1.5465;
+    AGN_struct(1, 1).p_fail = p_fail;
+    AGN_struct(1, 1).srec_val = srec_EE;
+    AGN_struct(1, 1).label = 'L23-E -> L23-E';
+
+Values are put into ConParCont, which is orignally found in ConfigIDNetRMD.m.
+ConParCont is a cell array with 1) index of the parameter set to be used for each synapse, 2) synapse type number for each synapse and 3) parameters sets (as seperate vector entries, if more than one), all of these for each input->output pair. The parameters of ConParCont are wgt (weight) dtax (unknown?) and p_fail (probability of synaptic failure).
+
+# inv_con_PSP.m
+Implements linear transformation from a desired maximal PSP value to a peak conductance, according to the data in inv_con_par, depending on input and output neuron type.
+Contains magic numbers.
+
+# Run_update_inv_con_PSP
+Run this whenever parameters are changed that affect the post-synaptic potential (PSP) in any of the neuron classes.
+Use par_E and par_I computed here in inv_con_PSP.m
+Contains magic numbers that have not been updated.
 
 # selectSimulation.m
 This sets the name of a particular simulation (e.g. wild type, NMDA receptors ablated from pyramidal cells, etc.) to "true." The names match field names in setCRISPRparams and correspond to specific simulation runs.
