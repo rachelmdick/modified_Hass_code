@@ -45,10 +45,8 @@ Ouptput:
 setCRISPRparams is called in this file to set the number of neurons in populations 1, 8, 15, and 16 (magic numbers) as well as the strength of synaptic connections.
 In the section titled "Set network parameters," the identities of the 16 different neuron types and their magic numbers are defined. Copied below:
 
-% (1) L23-E  (2) L23-E-Grin1 (3) L23-I-L  (4) L23-I-L-d  (5) L23-I-CL   
-% (6) L23-I-CL-AC  (7) L23-I-CS   (8) L23-I-F 
-% (9) L5-E  (10) L5-E-Grin1 (11) L5-I-L  (12) L5-I-L-d  (13) L5-I-CL   
-% (14) L5-I-CL-AC  (15) L5-I-CS   (16) L5-I-F 
+(1) L23-E  (2) L23-E-Grin1 (3) L23-I-L  (4) L23-I-L-d  (5) L23-I-CL  (6) L23-I-CL-AC  (7) L23-I-CS   (8) L23-I-F  (9) L5-E  (10) L5-E-Grin1 (11) L5-I-L  (12) L5-I-L-d  (13) L5-I-CL  
+(14) L5-I-CL-AC  (15) L5-I-CS   (16) L5-I-F 
 
 NTypes, which is the number of neurons of each type, is set here. Variables (L23_E_control, L23_E_Grin1) are used for the pyramidal neuron populations in the modified code.
 
