@@ -8,10 +8,10 @@ and confocal imaging experiments. The titles of all modified code files end with
 
 # RunIDNetRMD.m
 The main file is RunIDNetRMD.m, which runs the simulation and creates a raster plot of the resulting spike trains. 
-This is where we set:
+This is where we set the following simulation parameters:
 – Simulation time
 – Number of neurons, input neurons, and columns/stripes
-– Simulation conditions set in the CRISPRparams file (e.g. wild type, NMDA receptors ablated from pyramidal cells, etc.)
+– Simulation conditions set in the CRISPRparams file (e.g. wild type, NMDA receptors ablated from pyramidal cells, etc.) – ss_str
 – Synaptic weight scales
 – Connectivity scales
 – Background input and constant DC current
