@@ -15,7 +15,7 @@ Set in SetCRISPRparams.m
 * Details of synapse parameter regime – weights for AMPA, NMDA, and GABA for each synapse type
 * dtax (meaning unknown)
 * p_fail (failure probability)
-* srec (scaling factors for recurrent and input connection strengths)
+* srec (scaling factors for recurrent and input connection strengths)
 
 Set in ConfigIDNetRMD.m
 * Types of neurons and their respective numbers within the overall populations
