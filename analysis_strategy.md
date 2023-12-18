@@ -24,6 +24,9 @@ Set in ConfigIDNetRMD.m
 
 __Part Two: Running simulations for a set of parameters__
 
+TO DO:
+* Make sure output files are being saved to the right folder based on simulation type from SetCRISPRparams
+
 This takes place in IDNetSimRMD.m
 
 Inputs: 
@@ -38,6 +41,15 @@ Outputs:
 
 __Part Three: Analyzing outputs of a single simulation and producing single-run figures__
 
+TO DO:
+* Make sure graphs are being saved to the right folder 
+* useful functions: mkdir, exist(filename, 'type') – type can be dir, file, var, mat, etc.
+* look at pairwise correlations between excitatory neurons – 0-lag synchrony
+
+FUTURE ANALYSIS:
+* covariance matrix of spiking activity for entire population
+* plot Eigenvalue spectra
+
 The spike raster plot is produced in RunIDNetRMD.m using STMtx
 
 Summary statistics (ISI and CV) are produced in ISImath.m
@@ -48,13 +60,12 @@ Summary statistics (ISI and CV) are produced in ISImath.m
   
 __Part Four: Combined analysis of multiple simulations and generating summary figures__
 
-TO ADD:
-* local function within ISImath.m will loop over files and produce a struct to hold the kernel distribution (ksdensity) and figures
-* code for graphs with multiple simulations
-
-Use a similar format as ephys data analysis?  
+Use a similar format as ephys data analysis 
 * A metadata file sets the file path and different fields of a struct based on the file characteristics
-* One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array  \
+* One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array  
 * run_ephys_analysis takes all the metadata from the array and puts relevant measurements into a .mat file
 * The .mat file is loaded in the graph_sweeps function to produce a figure
-* Then run_ephys_analysis loops through each entry  
+* Then run_ephys_analysis loops through each entry
+
+* d = dir('name') will return a list of everything in the directory with that name
+* d = dir('x/x3_*.mat') pulls all the files that have x3 as part of their name
