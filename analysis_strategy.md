@@ -41,9 +41,9 @@ __Part Three: Analyzing outputs of a single simulation and producing single-run 
 The spike raster plot is produced in RunIDNetRMD.m using STMtx
 
 Summary statistics (ISI and CV) are produced in ISImath.m
-* the output file (filename) is loaded
+* the output file (filename) is loaded along with all of the associated variables
 * optional: sort out excitatory neurons with at least ten spikes
-* ISI and CV are calculated 
+* ISI and CV are calculated and plotted
 * can also plot voltage for a single cell
   
 __Part Four: Combined analysis of multiple simulations and generating summary figures__
