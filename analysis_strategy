@@ -1,0 +1,21 @@
+Part One: Determining experimental parameters
+
+Set in RunIDNetRMD.m
+- Simulation time
+– Number of neurons
+– Number of columns/stripes
+– Synapse parameter regime (true_field) – e.g. CaMKII_Grin1_50, which refers to abolition of the NMDA current in 50% of postsynaptic excitatory neurons
+
+Set in SetCRISPRparams.m
+– Details of synapse parameter regime – weights for AMPA, NMDA, and GABA for each synapse type
+– dtax (meaning unknown), failure probability, and 
+
+Part Two: Running simulations for a set of parameters
+Inputs:
+Outputs:
+
+Part Three: Analyzing outputs of a single simulation and producing single-run figures
+Inputs:
+Outputs:
+
+Part Four: Combined analysis of multiple simulations and generating summary figures
