@@ -4,12 +4,15 @@ The actual simulation is run at the end of IDNetSimRMD.m
 
 Part One: Determining experimental parameters
 
+ Markup : * Bullet list
+              * Nested bullet
+
 Set in RunIDNetRMD.m
-– Simulation time
-– Number of neurons
-– Number of columns/stripes
-– Synapse parameter regime (true_field) from SetCRISPRparams.m
-- e.g. CaMKII_Grin1_50 refers to abolition of the NMDA current in 50% of postsynaptic excitatory neurons
+* Simulation time
+* Number of neurons
+* Number of columns/stripes
+* Synapse parameter regime (true_field) from SetCRISPRparams.m
+  * e.g. CaMKII_Grin1_50 refers to abolition of the NMDA current in 50% of postsynaptic excitatory neurons
 
 Set in SetCRISPRparams.m
 – Details of synapse parameter regime – weights for AMPA, NMDA, and GABA for each synapse type
