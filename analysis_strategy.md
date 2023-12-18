@@ -26,6 +26,7 @@ __Part Two: Running simulations for a set of parameters__
 
 TO DO:
 * Make sure output files are being saved to the right folder based on simulation type from SetCRISPRparams
+* Check for existance of simulation results before running a new one with the same name so that we don't overwrite files
 
 This takes place in IDNetSimRMD.m
 
@@ -61,8 +62,8 @@ Summary statistics (ISI and CV) are produced in ISImath.m
 __Part Four: Combined analysis of multiple simulations and generating summary figures__
 
 Use a similar format as ephys data analysis 
-* A metadata file sets the file path and different fields of a struct based on the file characteristics
-* One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array  
+* A metadata file sets the file path and different fields of a struct based on the file characteristics – not necessary because SimPar is a struct with all the metadata that we need
+* One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array – not necessary to convert file types  
 * run_ephys_analysis takes all the metadata from the array and puts relevant measurements into a .mat file
 * The .mat file is loaded in the graph_sweeps function to produce a figure
 * Then run_ephys_analysis loops through each entry
