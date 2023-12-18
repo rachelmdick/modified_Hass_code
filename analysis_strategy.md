@@ -2,7 +2,7 @@ High-level parameters, including a chosen set of synapse parameters from SetCRIS
 These are passed to ConfigIDNetRMD.m, where detailed neuron parameters are set and passed to IDNetSimRMD.m
 The actual simulation is run at the end of IDNetSimRMD.m
 
-Part One: Determining experimental parameters
+__Part One: Determining experimental parameters__
 
 Set in RunIDNetRMD.m
 * Simulation time
@@ -22,7 +22,7 @@ Set in ConfigIDNetRMD.m
 * This is where we call setCRISPRparams
 * SimPar (structure) is the output 
 
-Part Two: Running simulations for a set of parameters
+__Part Two: Running simulations for a set of parameters__
 
 This takes place in IDNetSimRMD.m
 
@@ -36,7 +36,7 @@ Outputs:
 * V, a cell array of voltage traces for each neuron in the viewlist
 * Ninp, the number of simulated neurons
 
-Part Three: Analyzing outputs of a single simulation and producing single-run figures
+__Part Three: Analyzing outputs of a single simulation and producing single-run figures__
 
 The spike raster plot is produced in RunIDNetRMD.m using STMtx
 
@@ -46,7 +46,7 @@ Summary statistics (ISI and CV) are produced in ISImath.m
 * ISI and CV are calculated 
 * can also plot voltage for a single cell
   
-Part Four: Combined analysis of multiple simulations and generating summary figures
+__Part Four: Combined analysis of multiple simulations and generating summary figures__
 
 TO ADD:
 * local function within ISImath.m will loop over files and produce a struct to hold the kernel distribution (ksdensity) and figures
