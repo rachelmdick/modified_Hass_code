@@ -1,6 +1,6 @@
- High-level parameters, including a chosen set of synapse parameters from SetCRISPRparams.m, are set in RunIDNetRMD.m
- These are passed to ConfigIDNetRMD.m, where detailed neuron parameters are set and passed to IDNetSimRMD.m
- The actual simulation is run at the end of IDNetSimRMD.m
+High-level parameters, including a chosen set of synapse parameters from SetCRISPRparams.m, are set in RunIDNetRMD.m   
+These are passed to ConfigIDNetRMD.m, where detailed neuron parameters are set and passed to IDNetSimRMD.m   
+The actual simulation is run at the end of IDNetSimRMD.m   
 
 __Part One: Determining experimental parameters__
 
