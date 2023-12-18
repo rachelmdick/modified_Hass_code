@@ -18,8 +18,8 @@ Set in SetCRISPRparams.m
 * srec (scaling factors for recurrent and input connection strengths)
 
 Set in ConfigIDNetRMD.m
-* Types of neurons and their respective numbers within the overall populations
-* This is where we call setCRISPRparams
+* Types of neurons and their respective numbers within the overall populations
+* This is where we call setCRISPRparams
 * SimPar (structure) is the output 
 
 __Part Two: Running simulations for a set of parameters__
