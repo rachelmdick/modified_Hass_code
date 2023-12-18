@@ -53,8 +53,8 @@ TO ADD:
 * code for graphs with multiple simulations
 
 Use a similar format as ephys data analysis?  
-A metadata file sets the file path and different fields of a struct based on the file characteristics  
-One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array  
-run_ephys_analysis takes all the metadata from the array and puts relevant measurements into a .mat file  
-The .mat file is loaded in the graph_sweeps function to produce a figure  
-Then run_ephys_analysis loops through each entry  
+* A metadata file sets the file path and different fields of a struct based on the file characteristics
+* One function (matlabsweeps in open_file.m) exists to import data from the metadata file into an array  \
+* run_ephys_analysis takes all the metadata from the array and puts relevant measurements into a .mat file
+* The .mat file is loaded in the graph_sweeps function to produce a figure
+* Then run_ephys_analysis loops through each entry  
