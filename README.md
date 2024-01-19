@@ -137,3 +137,16 @@ This code also allows us to replicate experiments with different random initiali
 # IDNet.c
 This is a MEX function written in C to simulate arbitrary biological neural networks, which is used with the MATLAB wrapper IDNetSim.m  
 NumNeuPar is set to 13 instead of 12 in the modified code to reflect the addition of another row to NumNeuPar.  
+
+# ISImath.m
+From the Van der Meer lab at Dartmouth 
+
+A basic way to quantify the regularity of a spike train is to use the coefficient of variation CV, defined as the ISI standard deviation divided by the ISI mean. If the spike train is perfectly regular, this will be 0; if it is 1, the ISIs are “Poisson-distributed” (more on this below). If it is > 1, the spike train is more irregular (e.g. bursting).
+
+The autocorrelation function describes the probability of finding a spike at time t+t′ given a spike at time t, for some range of lags t′.
+
+The intuition behind the cross-correlation between two spike trains is the following: given that neuron 1 emits a spike at time t, what is the probability of seeing a spike from neuron 2 at different lags t+t′? For instance, if neuron 2 reliably fires 10ms after neuron 1, the cross-correlation between 1 and 2 would have a peak at +10ms. The autocorrelation is a special case of this with the two spike trains being the same.
+
+
+
+
