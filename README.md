@@ -102,6 +102,17 @@ Outputs:
 * SynPar:         Synapse parameters (concatinating old and new columns)
 * Nsyn:           Updated number of synapses
 * idc:            Updated synapse indices
+  
+SynPar has seven rows with data for each individual synapse.
+* SynPar(1, idc) = ST (synapse type – depends on the presynaptic cell; if excitatory, it loops through 1 and 3 for AMPA and NMDA respectively; if inhibitory, it’s equal to 2 for GABA)
+* SynPar(2, idc) = U; utilization of synaptic resources 
+* SynPar(3, idc) = tc_rec; time constant of recovery from depression
+* SynPar(4, idc) = tc_fac; time constant of recovery from facilitation
+* SynPar(5, idc) = synaptic weight
+* SynPar(6, idc) = dtax
+* SynPar(7, idc) = failure probability
+
+For SynPar(2-4,idc), see Table 4 in the Hass paper, which comes from Table 1 in Wang… Goldman-Rakic (citation 32). 
 
 # setCRISPRparams.m
 This file sets the ratio of pyramidal cells in the wild type and NMDA receptor knockout conditions, as well as the parameters for each synpase type.   
