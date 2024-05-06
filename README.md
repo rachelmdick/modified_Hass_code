@@ -106,8 +106,8 @@ Outputs:
 SynPar has seven rows with data for each individual synapse.
 * SynPar(1, idc) = ST (synapse type – depends on the presynaptic cell; if excitatory, it loops through 1 and 3 for AMPA and NMDA respectively; if inhibitory, it’s equal to 2 for GABA)
 * SynPar(2, idc) = U; utilization of synaptic resources 
-* SynPar(3, idc) = tc_rec; time constant of recovery from depression
-* SynPar(4, idc) = tc_fac; time constant of recovery from facilitation
+* SynPar(3, idc) = tc_rec; time constant of recovery from depression, in ms
+* SynPar(4, idc) = tc_fac; time constant of recovery from facilitation, in ms
 * SynPar(5, idc) = synaptic weight
 * SynPar(6, idc) = dtax
 * SynPar(7, idc) = failure probability
